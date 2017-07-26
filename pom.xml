@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cn.songxinqiang</groupId>  
-    <artifactId>swagger-spring-boot-starter</artifactId>
+    <groupId>cn.songxinqiang</groupId>
+    <artifactId>swagger-spring-boot-starter-demo</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -13,9 +13,9 @@
         <version>1.5.4.RELEASE</version>
     </parent>
 
-    <name>SpringBootSwaggerStarter-Demo</name>
+    <name>Spring Boot Swagger Starter Demo</name>
     <description>
-        在Spring-Boot中使用Swagger,会自动配置
+        演示如何使用Swagger Spring Boot Starter进行api的展示
     </description>
     <url>https://git.oschina.net/songxinqiang/SpringBootSwaggerStarter-Demo</url>
 
@@ -42,20 +42,59 @@
     </scm>
 
     <properties>
-        <spring-boot.version>1.5.4.RELEASE</spring-boot.version>
-        <swagger.version>2.7.0</swagger.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}_${current.time}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>cn.songxinqiang.demo.swagger.BootApplication</mainClass>
+                    <layout>JAR</layout>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>timestamp-property</id>
+                        <goals>
+                            <goal>timestamp-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>current.time</name>
+                            <pattern>yyyyMMddHHmmss</pattern>
+                            <timeZone>GMT+8</timeZone>
+                            <locale>zh_CN</locale>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>develop</id>
+            <dependencies>
+                <dependency>
+                    <groupId>cn.songxinqiang</groupId>
+                    <artifactId>swagger-spring-boot-starter</artifactId>
+                    <version>1.0.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 </project>
