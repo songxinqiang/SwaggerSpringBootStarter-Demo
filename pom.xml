@@ -70,7 +70,7 @@
                 <dependency>
                     <groupId>cn.songxinqiang</groupId>
                     <artifactId>swagger-spring-boot-starter</artifactId>
-                    <version>1.0.0</version>
+                    <version>1.0.1</version>
                 </dependency>
             </dependencies>
             <build>
