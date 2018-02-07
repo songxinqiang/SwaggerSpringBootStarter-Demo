@@ -5,19 +5,19 @@
     <groupId>cn.songxinqiang</groupId>
     <artifactId>swagger-spring-boot-starter-demo</artifactId>
     <packaging>jar</packaging>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.6.RELEASE</version>
+        <version>1.5.10.RELEASE</version>
     </parent>
 
     <name>Spring Boot Swagger Starter Demo</name>
     <description>
         演示如何使用Swagger Spring Boot Starter进行api的展示
     </description>
-    <url>https://git.oschina.net/songxinqiang/SpringBootSwaggerStarter-Demo</url>
+    <url>https://gitee.com/songxinqiang/SpringBootSwaggerStarter-Demo</url>
 
     <licenses>
         <license>
@@ -36,9 +36,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:git@git.oschina.net:songxinqiang/SpringBootSwaggerStarter-Demo.git</connection>
-        <developerConnection>scm:git:git@git.oschina.net:songxinqiang/SpringBootSwaggerStarter-Demo.git</developerConnection>
-        <url>https://git.oschina.net/songxinqiang/SpringBootSwaggerStarter-Demo</url>
+        <connection>scm:git:git@gitee.com:songxinqiang/SpringBootSwaggerStarter-Demo.git</connection>
+        <developerConnection>scm:git:git@gitee.com:songxinqiang/SpringBootSwaggerStarter-Demo.git</developerConnection>
+        <url>https://gitee.com/songxinqiang/SpringBootSwaggerStarter-Demo</url>
     </scm>
 
     <properties>
@@ -70,7 +70,7 @@
                 <dependency>
                     <groupId>cn.songxinqiang</groupId>
                     <artifactId>swagger-spring-boot-starter</artifactId>
-                    <version>1.0.1</version>
+                    <version>1.0.3</version>
                 </dependency>
             </dependencies>
             <build>
